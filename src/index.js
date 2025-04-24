@@ -15,7 +15,7 @@ async function fetchData(location) {
 	}
 }
 
-async function start(location) {
+async function start(location="hanover") {
 	const json = await fetchData(location);
 	console.log(json);
 	renderDays(json.days);
@@ -23,7 +23,7 @@ async function start(location) {
 
 const location = document.querySelector("input");
 
-start(location.value);
+start();
 
 function renderDays(days) {
 	const main = document.querySelector(".hour-container");
