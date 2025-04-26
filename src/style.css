@@ -91,7 +91,7 @@ body {
 	padding: 10px;
 	border: 2px solid black;
 	border-radius: 10px;
-	width: 40%;
+	width: 35%;
 }
 
 img {
@@ -156,4 +156,12 @@ img {
 
 .day .dayDesc {
 	flex: 3;
+}
+
+.day .dayDate {
+	flex: 0.3;
+}
+
+.day .dayTemp {
+	flex: 0.4;
 }

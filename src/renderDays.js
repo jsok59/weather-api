@@ -9,9 +9,10 @@ function renderDays(days) {
 		row.className = "day";
 		const date = document.createElement("div");
 		date.textContent = formatDay(days[i].datetime);
-
+		date.className = "dayDate";
 		const temp = document.createElement("div");
 		temp.textContent = days[i].temp + "°";
+		temp.className = "tempDate";
 		const img = document.createElement("img");
 		import(`../images/${days[i].icon}.svg`).then((result) => {
 			img.src = result.default;
@@ -21,6 +22,7 @@ function renderDays(days) {
 		const desc = document.createElement("div");
 		desc.textContent = days[i].description;
 		desc.className = "dayDesc";
+
 		row.appendChild(date);
 		row.appendChild(img);
 		row.appendChild(desc);
