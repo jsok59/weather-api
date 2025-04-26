@@ -1,7 +1,7 @@
 import { clearContainer } from "./clearContainer";
 
 function renderDays(days) {
-	const main = document.querySelector(".hour-container");
+	const main = document.querySelector(".day-container");
 	clearContainer(main);
 	for (const day of days) {
 		const row = document.createElement("div");

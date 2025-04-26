@@ -125,3 +125,19 @@ img {
 .rightHeader {
 	align-items: end;
 }
+
+/* HOURS CONTAINER */
+
+.hour-container {
+	display: flex;
+}
+
+.hour-container .hour {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 20px 0px;
+	border-bottom: 2px solid black;
+	gap: 5px;
+}

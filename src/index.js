@@ -1,6 +1,7 @@
 import "./style.css";
 import { renderHeader } from "./renderHeader";
 import { renderDays } from "./renderDays";
+import { renderHours } from "./renderHours";
 
 const location = document.querySelector("input");
 const form = document.querySelector("form");
@@ -29,6 +30,7 @@ async function start(location = "hanover") {
 	console.log(json);
 	renderDays(json.days);
 	renderHeader(json);
+	renderHours(json.days[0].hours);
 }
 
 start("Silver Spring");
