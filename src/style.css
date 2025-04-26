@@ -84,10 +84,6 @@ body {
 	align-items: center;
 }
 
-.row {
-	display: flex;
-}
-
 .main-container {
 	display: flex;
 	flex-direction: column;
@@ -140,4 +136,24 @@ img {
 	padding: 20px 0px;
 	border-bottom: 2px solid black;
 	gap: 5px;
+}
+
+/* DAY CONTAINER */
+
+.day-container {
+	padding: 10px;
+}
+
+.day {
+	display: flex;
+	gap: 15px;
+}
+
+.day .dayImg {
+	justify-self: flex-start;
+	flex: 0.4;
+}
+
+.day .dayDesc {
+	flex: 3;
 }

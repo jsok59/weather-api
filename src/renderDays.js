@@ -1,28 +1,38 @@
 import { clearContainer } from "./clearContainer";
+import { parse, format } from "date-fns";
 
 function renderDays(days) {
 	const main = document.querySelector(".day-container");
 	clearContainer(main);
-	for (const day of days) {
+	for (let i = 0; i < 7; i++) {
 		const row = document.createElement("div");
-		row.className = "row";
+		row.className = "day";
 		const date = document.createElement("div");
-		date.textContent = day.datetime;
-		const condition = document.createElement("div");
-		condition.textContent = day.conditions;
-		const temp = document.createElement("div");
-		temp.textContent = day.temp + "°";
-		const img = document.createElement("img");
+		date.textContent = formatDay(days[i].datetime);
 
-		import(`../images/${day.icon}.svg`).then((result) => {
+		const temp = document.createElement("div");
+		temp.textContent = days[i].temp + "°";
+		const img = document.createElement("img");
+		import(`../images/${days[i].icon}.svg`).then((result) => {
 			img.src = result.default;
 		});
+		img.className = "dayImg";
+
+		const desc = document.createElement("div");
+		desc.textContent = days[i].description;
+		desc.className = "dayDesc";
 		row.appendChild(date);
-		row.appendChild(condition);
-		row.appendChild(temp);
 		row.appendChild(img);
+		row.appendChild(desc);
+		row.appendChild(temp);
 		main.append(row);
 	}
+}
+
+function formatDay(day) {
+	const parsedDay = parse(day, "yyyy-MM-dd", new Date());
+	const formattedDay = format(parsedDay, "EEE");
+	return formattedDay;
 }
 
 export { renderDays };
